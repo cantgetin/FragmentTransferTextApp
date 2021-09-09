@@ -34,35 +34,12 @@ class FragmentB : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-
-
-
-
+        savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_b, container, false)
-
         val mainText = view.findViewById<TextView>(R.id.textView)
         mainText.text = arguments?.getString("pass")
-
-
         return view
     }
-
-   /* override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        val view = inflater.inflate(R.layout.fragment_a, container, false)
-        val mainText = view.findViewById<TextView>(R.id.textView2)
-        mainText.text = arguments?.getInt("openWithId").toString()
-        view.findViewById<Button>(R.id.buttonSwitch).apply {
-            setOnClickListener { clickListener?.onClick() }
-            // Inflate the layout for this fragment
-            return view
-        }*/
 
     companion object {
         fun newInstance(text: String) : FragmentB {

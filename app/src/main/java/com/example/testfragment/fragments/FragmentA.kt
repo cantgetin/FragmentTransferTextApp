@@ -49,40 +49,21 @@ class FragmentA : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
+        savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_a, container, false)
-
         textBox = view.findViewById(R.id.editText)
-
-
         view.findViewById<Button>(R.id.buttonSwitch).apply {
             setOnClickListener { clickListener?.onClick() }
-        // Inflate the layout for this fragment
         return view
     }
 
-
-
-}
+    }
 
     fun getText(): String {
         return textBox?.editableText.toString()
     }
 
-    companion object {
-        fun newInstance(text: String) : FragmentA {
-            val args = Bundle()
-            args.putString("pass", text)
-            val fragment = FragmentA()
-            fragment.arguments = args
-            return fragment
-        }
-
-
-    }
-
-
-
 }
+
+
+

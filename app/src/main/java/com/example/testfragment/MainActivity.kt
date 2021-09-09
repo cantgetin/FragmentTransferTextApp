@@ -10,7 +10,7 @@ import com.example.testfragment.fragments.FragmentB
 
 class MainActivity : AppCompatActivity(), FragmentClickListener {
 
-    var fragmentA = FragmentA.newInstance("Hello world")
+    var fragmentA = FragmentA()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity(), FragmentClickListener {
     override fun onClick() {
 
         var text = fragmentA.getText()
-
         supportFragmentManager.beginTransaction()
             .addToBackStack(null)
             .replace(R.id.main_container, FragmentB.newInstance(text)).commit()
